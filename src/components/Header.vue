@@ -11,7 +11,7 @@
         <router-link class="link" to="create">Create</router-link>
         <router-link class="link" to="post">Post</router-link>
         <li class="link" @click="Logout">Logout</li>
-        <li>cart ({{ useUser.cartAddition }})</li>
+        <router-link to="cart" class="link">Cart ({{ useUser.cartAddition }})</router-link>
       </ul>
     </div>
   </div>

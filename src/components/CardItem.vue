@@ -14,7 +14,7 @@
           <p>{{ "₹" + " " + card?.card?.info?.price / 100 }}</p>
         </div>
         <img class="img" :src="card?.card?.info?.imageId" alt="itemImg" />
-        <button class="btn" @click="hello()">btn</button>
+        <button class="btn" @click="hello">btn</button>
       </div>
     </div>
   </div>
@@ -22,12 +22,20 @@
 
 <script>
 export default {
-  name: "cardItem",
+  name: "CardItem",
   props: {
     item: Object,
-    accordian: [Number,null],
+    accordian: [Number,null,Boolean],
     index:Number  
   },
+  setup () {
+    function hello() {
+      console.log("hello")
+    }
+    return {
+      hello
+    }
+  }
 }
 </script>
 

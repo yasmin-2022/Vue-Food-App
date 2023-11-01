@@ -18,12 +18,12 @@
 <script>
 import { ref, computed, onMounted } from "vue"
 import axios from "axios"
-import CardItem from '../components/CardItem.vue'
-// import cardItem from "../components/CardItem.vue"
+import cardItem from "../components/CardItem.vue"
 
 export default {
+  name: "About",
   components: {
-    CardItem,
+    cardItem,
   },
   setup() {
     const searchTerm = ref("")

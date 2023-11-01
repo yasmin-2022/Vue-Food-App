@@ -2,8 +2,6 @@
   <div>
     <slot name="header"></slot>
   <h1 >This is Home Page</h1>
-  <h1 >{{ userDetails.name }}</h1>
-  <h1 >{{ userDetails.age }}</h1>
   <button @click="changename">click</button>
   <slot></slot>
   <button @click="ChangeFirstName">ChangeFirstName</button>

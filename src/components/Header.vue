@@ -11,7 +11,10 @@
         <router-link class="link" to="create">Create</router-link>
         <router-link class="link" to="post">Post</router-link>
         <li class="link" @click="Logout">Logout</li>
-        <router-link to="cart" class="link">Cart ({{ useUser.cartAddition }})</router-link>
+        <router-link to="cart" class="link"
+          >Cart ({{ useUser.cart.length }})</router-link
+        >
+        <li class="user">{{ useStore.user }}</li>
       </ul>
     </div>
   </div>
@@ -20,10 +23,13 @@
 <script>
 import { onMounted, ref } from "vue"
 import { useRouter } from "vue-router"
-import { useUserStore} from "../store/Loading"
+import { useUserStore } from "../store/Cart"
+
 export default {
   name: "HeaderPage",
-  setup () {
+  setup() {
+    const useStore = useUserStore()
+
     const useUser = useUserStore()
     const router = useRouter()
     const isDarkMode = ref(false)
@@ -52,7 +58,8 @@ export default {
       Logout,
       isDarkMode,
       toggleBtn,
-      useUser
+      useUser,
+      useStore,
     }
   },
 }
@@ -133,5 +140,13 @@ button {
     width: 100vw;
     height: 100px;
   }
+}
+.user {
+  width: 15px;
+  height: 15px;
+  background: #000;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
 }
 </style>

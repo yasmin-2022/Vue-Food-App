@@ -3,6 +3,7 @@
     <img src="../assets/image 3.png" alt="logo" />
 
     <h1>Login</h1>
+    <input type="text" v-model="useStore.name">
     <input type="email" placeholder="Enter Email" v-model="email" />
     <input type="text" placeholder="Enter Password" v-model="password" />
     <button @click="getdata">Login</button>
@@ -17,9 +18,11 @@
 import { ref } from "vue"
 import axios from "axios"
 import { useRouter } from "vue-router"
+import {useUserStore} from '../store/Cart'
 export default {
   name: "Login",
-  setup() {
+  setup () {
+    const useStore = useUserStore()
     const router = useRouter()
     const email = ref("")
     const password = ref("")
@@ -44,6 +47,7 @@ export default {
       getdata,
       email,
       password,
+      useStore,
     }
   },
 }

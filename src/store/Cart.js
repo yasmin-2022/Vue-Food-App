@@ -3,17 +3,25 @@ export const useUserStore = defineStore('useUser', {
   state: () => ({
     count: 0,
     loading: false,
-    cart:2,
-    name: 'Yasmin',
-    password: 'Yasmin@786',
-    email: 'parveenyasmin390@gmail.com',
+    cart: [],
+    name:'',
+    email: '',
   }),
   getters: {
-    cartAddition(state){
-      return state.cart * 2;
+    user () { 
+       return this.name.slice(0,1)
     }
   },
   actions: {
+    addItems (item ) {
+      this.cart.push(item)
+    },
+    removeItems (index) {
+      this.cart.splice(index, 1);
+    },
+    clearCart () {
+      this.cart = [];
+    },
     add () {
       this.count++
     },

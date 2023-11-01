@@ -14,28 +14,32 @@
           <p>{{ "₹" + " " + card?.card?.info?.price / 100 }}</p>
         </div>
         <img class="img" :src="card?.card?.info?.imageId" alt="itemImg" />
-        <button class="btn" @click="hello">btn</button>
+        <button class="btn" @click="addCartItems(card)">btn</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { useUserStore } from "../store/Cart"
 export default {
   name: "CardItem",
   props: {
     item: Object,
-    accordian: [Number,null,Boolean],
-    index:Number  
+    accordian: [Number, null, Boolean],
+    index: Number,
   },
-  setup () {
-    function hello() {
-      console.log("hello")
+  setup() {
+    const useCart = useUserStore()
+    const addCartItems = (card) => {
+      useCart.addItems(card)
     }
+
     return {
-      hello
+      useCart,
+      addCartItems,
     }
-  }
+  },
 }
 </script>
 

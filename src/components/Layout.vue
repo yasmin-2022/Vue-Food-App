@@ -7,7 +7,7 @@
 
 <script>
 import Header from './Header.vue'
-import {useUserStore} from '../store/Loading'
+import {useUserStore} from '../store/Cart'
 export default {
   components: {
     Header

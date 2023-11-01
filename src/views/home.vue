@@ -8,14 +8,14 @@
         <router-link to="/about" class="list">
           <img :src="item?.card?.card?.info?.cloudinaryImageId" alt="img" />
         </router-link>
-          <h1>{{ item?.card?.card?.info?.name }}</h1>
-          <p>{{ item?.card?.card?.info?.locality }}</p>
-          <p>{{ item?.card?.card?.info?.cuisines.join() }}</p>
-          <p>{{ item?.card?.card?.info?.areaName }}</p>
-          <p>{{ item?.card?.card?.info?.costForTwo }}</p>
-          <p>{{ item?.card?.card?.info?.avgRating + "Star" }}</p>
-        </div>
+        <h1>{{ item?.card?.card?.info?.name }}</h1>
+        <p>{{ item?.card?.card?.info?.locality }}</p>
+        <p>{{ item?.card?.card?.info?.cuisines.join() }}</p>
+        <p>{{ item?.card?.card?.info?.areaName }}</p>
+        <p>{{ item?.card?.card?.info?.costForTwo }}</p>
+        <p>{{ item?.card?.card?.info?.avgRating + "Star" }}</p>
       </div>
+    </div>
   </div>
 </template>
 
@@ -110,5 +110,10 @@ p {
 }
 .list {
   list-style: none;
+}
+.user input {
+  margin-top: 22px;
+  margin-left: 13%;
+  padding: 2px;
 }
 </style>
